@@ -1,11 +1,12 @@
-import { db } from "./db";
+import { db } from "./db.ts";
 import { 
   users, jobs, applications, questions, answers, resources,
   type User, type InsertUser,
   type Job, type InsertJob,
   type Application, type InsertApplication,
-  type JobResponse, type ApplicationResponse
-} from "@shared/schema";
+  type JobResponse, type ApplicationResponse,
+  verificationRequests
+} from "../shared/schema.ts";
 import { eq, inArray } from "drizzle-orm";
 
 export interface IStorage {
