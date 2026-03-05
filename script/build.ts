@@ -58,6 +58,12 @@ async function buildAll() {
     minify: true,
     external: externals,
     logLevel: "info",
+    banner: {
+    js: `
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+`
+  },
   });
 }
 
