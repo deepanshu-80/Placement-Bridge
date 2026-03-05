@@ -1,10 +1,11 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url || 'file:///');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Ya seedha ye use karo:
+const __dirname = path.resolve();  
 
 export function serveStatic(app: Express) {
   const distPath = path.resolve(__dirname, "../client/dist");
