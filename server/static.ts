@@ -8,7 +8,7 @@ const require = createRequire(import.meta.url || 'file:///');
 const __dirname = path.resolve();  
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(__dirname, "../client/dist");
+  const distPath = path.resolve(__dirname, "dist/public");
 
   if (!fs.existsSync(distPath)) {
     throw new Error(
